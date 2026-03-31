@@ -117,12 +117,8 @@
     </div>
     @if($cases->hasPages())
     <div class="card-footer bg-white py-3 px-4">
-        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
-            <small class="text-muted">
-                Showing {{ $cases->firstItem() }}–{{ $cases->lastItem() }} of {{ $cases->total() }} records
-            </small>
-            {{ $cases->links() }}
-        </div>
+        {{-- Use the built-in Bootstrap 5 paginator view to avoid layout duplication --}}
+        {{ $cases->links('pagination::bootstrap-5') }}
     </div>
     @endif
 </div>
