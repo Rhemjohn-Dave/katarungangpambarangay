@@ -49,7 +49,7 @@
                 <div>
                     <div class="text-muted small fw-500">Recent (This Month)</div>
                     <div class="fw-bold fs-3 lh-1 mt-1">
-                        {{ \App\Models\CaseRecord::whereMonth('created_at', now()->month)->count() }}
+                        {{ \App\Models\CaseRecord::whereYear('created_at', now()->year)->whereMonth('created_at', now()->month)->count() }}
                     </div>
                 </div>
             </div>

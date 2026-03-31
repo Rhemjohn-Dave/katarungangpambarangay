@@ -36,7 +36,7 @@
                 <div>
                     <div class="text-muted small">This Month</div>
                     <div class="fw-bold fs-3 lh-1 mt-1">
-                        {{ \App\Models\CaseRecord::where('created_by', auth()->id())->whereMonth('created_at', now()->month)->count() }}
+                            {{ \App\Models\CaseRecord::where('created_by', auth()->id())->whereYear('created_at', now()->year)->whereMonth('created_at', now()->month)->count() }}
                     </div>
                 </div>
             </div>
